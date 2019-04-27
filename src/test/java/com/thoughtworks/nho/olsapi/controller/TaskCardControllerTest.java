@@ -12,6 +12,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Optional;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -31,16 +33,22 @@ public class TaskCardControllerTest {
             public void addTaskCard(TaskCard taskCard) {
 
             }
+
+            @Override
+            public Optional<TaskCard> getTaskCardById(String id) {
+                return Optional.empty();
+            }
         };
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
     @Test
-    public void testAddTimeCard() throws Exception {
+    public void should_return_success_when_input_valid_task_card_info() throws Exception {
         RequestBuilder requestBuilder = post("/taskCard/").param("name", "task1")
                 .param("description", "test save task card");
         mockMvc.perform(requestBuilder).andExpect(status().isOk())
                 .andExpect(content().string(ResponseCode.SUCCESS));
     }
+
 
 }
