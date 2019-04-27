@@ -1,7 +1,7 @@
 package com.thoughtworks.nho.olsapi.controller;
 
 import com.thoughtworks.nho.olsapi.entity.TaskCard;
-import com.thoughtworks.nho.olsapi.service.TaskCardService;
+import com.thoughtworks.nho.olsapi.service.taskcard.TaskCardService;
 import com.thoughtworks.nho.olsapi.util.ResponseCode;
 import org.junit.Before;
 import org.junit.Test;

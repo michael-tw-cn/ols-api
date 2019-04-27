@@ -1,4 +1,4 @@
-package com.thoughtworks.nho.olsapi.service;
+package com.thoughtworks.nho.olsapi.service.taskcard;
 
 import com.thoughtworks.nho.olsapi.entity.TaskCard;
 
