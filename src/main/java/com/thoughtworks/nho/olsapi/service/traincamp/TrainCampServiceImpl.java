@@ -1,5 +1,6 @@
 package com.thoughtworks.nho.olsapi.service.traincamp;
 
+import com.thoughtworks.nho.olsapi.common.OlsServiceException;
 import com.thoughtworks.nho.olsapi.entity.TrainCamp;
 import com.thoughtworks.nho.olsapi.entity.TrainCampSimpleInfo;
 import com.thoughtworks.nho.olsapi.repository.TrainCampRepository;
@@ -21,7 +22,12 @@ public class TrainCampServiceImpl implements TrainCampService {
 
 
     @Override
-    public void create(TrainCampSimpleInfo simpleInfo) {
+    public void create(TrainCampSimpleInfo simpleInfo) throws OlsServiceException {
+        List<Integer> taskCardIds = simpleInfo.getTaskCardIds();
+        if (CollectionUtils.isEmpty(taskCardIds)) {
+            throw new OlsServiceException("必须选择任务卡");
+        }
+
         TrainCamp trainCamp = new TrainCamp();
         BeanUtils.copyProperties(simpleInfo,trainCamp);
         trainCampRepository.save(trainCamp);
