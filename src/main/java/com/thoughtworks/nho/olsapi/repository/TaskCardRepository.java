@@ -1,6 +1,6 @@
 package com.thoughtworks.nho.olsapi.repository;
 
-import com.thoughtworks.nho.olsapi.model.TaskCard;
+import com.thoughtworks.nho.olsapi.entity.TaskCard;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

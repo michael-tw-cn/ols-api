@@ -1,4 +1,4 @@
-package com.thoughtworks.nho.olsapi.model;
+package com.thoughtworks.nho.olsapi.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
