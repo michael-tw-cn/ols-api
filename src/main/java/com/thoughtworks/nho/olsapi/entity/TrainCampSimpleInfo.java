@@ -1,20 +1,28 @@
 package com.thoughtworks.nho.olsapi.entity;
 
-import java.math.BigDecimal;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+@ApiModel("训练营基本信息类")
 public class TrainCampSimpleInfo {
 
+    @ApiModelProperty("id")
     private Long id;
-
+    @ApiModelProperty("名称")
     private String name;
-
+    @ApiModelProperty("类型")
     private String type;
-
+    @ApiModelProperty("简述")
     private String desc;
-
+    @ApiModelProperty("价格")
     private BigDecimal price;
-
+    @ApiModelProperty("课时")
     private Float score;
+    @ApiModelProperty("任务卡ids")
+    private List<Integer> taskCardIds;
 
     public Long getId() {
         return id;
@@ -62,5 +70,13 @@ public class TrainCampSimpleInfo {
 
     public void setScore(Float score) {
         this.score = score;
+    }
+
+    public List<Integer> getTaskCardIds() {
+        return taskCardIds;
+    }
+
+    public void setTaskCardIds(List<Integer> taskCardIds) {
+        this.taskCardIds = taskCardIds;
     }
 }

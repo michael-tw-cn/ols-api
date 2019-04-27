@@ -16,6 +16,8 @@ public class TrainCampServiceImpl implements TrainCampService {
 
     @Autowired
     private TrainCampRepository trainCampRepository;
+    @Autowired
+    private TrainCampTaskCardService trainCampTaskCardService;
 
 
     @Override
@@ -23,6 +25,7 @@ public class TrainCampServiceImpl implements TrainCampService {
         TrainCamp trainCamp = new TrainCamp();
         BeanUtils.copyProperties(simpleInfo,trainCamp);
         trainCampRepository.save(trainCamp);
+        trainCampTaskCardService.batchInsert(trainCamp.getId(),simpleInfo.getTaskCardIds());
     }
 
     @Override
