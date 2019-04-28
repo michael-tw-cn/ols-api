@@ -1,7 +1,7 @@
 package com.thoughtworks.nho.olsapi.controller;
 
 import com.thoughtworks.nho.olsapi.entity.TaskCard;
-import com.thoughtworks.nho.olsapi.service.TaskCardService;
+import com.thoughtworks.nho.olsapi.service.taskcard.TaskCardService;
 import com.thoughtworks.nho.olsapi.util.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;

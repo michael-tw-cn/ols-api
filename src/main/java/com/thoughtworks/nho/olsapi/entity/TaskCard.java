@@ -8,14 +8,22 @@ import javax.persistence.Id;
 @Entity
 public class TaskCard {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
     private String name;
 
     //todo: 题目
 //    private Topic topic;
+
     private String description;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

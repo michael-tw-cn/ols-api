@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TaskCardRepository extends CrudRepository<TaskCard, Integer> {
+public interface TaskCardRepository extends CrudRepository<TaskCard, String> {
 }
