@@ -11,16 +11,4 @@ S3_BUCKET=beijing-nho-deployment
 ./gradlew clean
 ./gradlew bootJar
 
-aws cloudformation package \
-    --region $AWS_REGION \
-	--template-file $ORIGINAL_TEMPLATE_PATH \
-	--output-template-file $COMPILED_TEMPLATE_PATH \
-	--s3-bucket $S3_BUCKET \
-	--s3-prefix $STACK_NAME \
-    --use-json
-
-aws cloudformation deploy \
-    --region $AWS_REGION \
-    --stack-name $STACK_NAME \
-    --template-file $COMPILED_TEMPLATE_PATH \
-    --capabilities CAPABILITY_IAM
+java -jar ./build/libs/ols-api-0.0.1.jar
