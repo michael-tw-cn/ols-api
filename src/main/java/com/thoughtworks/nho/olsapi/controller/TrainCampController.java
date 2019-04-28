@@ -36,5 +36,4 @@ public class TrainCampController {
     public WebResponse<List<TrainCampSimpleInfo>> listAvailableTrainCamp() {
         return WebResponseBuilder.build(trainCampService.list());
     }
-
 }
